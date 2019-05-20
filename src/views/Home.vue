@@ -9,30 +9,22 @@
             <img :src="leaf2" alt="leaf2" class="leaf2" v-show="leafShow" />
             <img :src="leaf1" alt="leaf1" class="leaf1" v-show="leafShow" />
             <div class="brand">
-              <h1>Hubber</h1>
-              <h3>An application for configuring Gaia Hub.</h3>
+              <h1>Radicle Society</h1>
+              <h3> Building the new internet.</h3>
             </div>
           </div>
         </div>
       </div>
     </parallax>
-    <div class="main main-raised">
-      <div class="section section-basic">
-        <div class="container"><side-car-admin /></div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
-import myAccountService from "@/services/myAccountService";
-import SideCarAdmin from "./components/admin/SideCarAdmin";
+import myAccountService from "brightblock-lib/src/services/myAccountService";
+
 export default {
   name: "home",
   bodyClass: "index-page",
-  components: {
-    SideCarAdmin
-  },
   props: {
     image: {
       type: String,

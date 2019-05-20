@@ -10,7 +10,7 @@
       <div class="md-toolbar-section-start">
         <h3 class="md-title">
           <router-link to="/" style="color: white;"
-            ><span class="md-display-2">Hubber</span></router-link
+            ><span class="md-display-2">Radicle Society</span></router-link
           >
         </h3>
       </div>
@@ -96,7 +96,7 @@ function resizeThrottler(actualResizeHandler) {
 }
 
 import MobileMenu from "@/layout/MobileMenu";
-import myAccountService from "@/services/myAccountService";
+import myAccountService from "brightblock-lib/src/services/myAccountService";
 
 export default {
   components: {

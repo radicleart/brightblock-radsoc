@@ -4,7 +4,7 @@ import Home from "./views/Home.vue";
 import Login from "./views/Login.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
-import myAccountService from "@/services/myAccountService";
+import myAccountService from "brightblock-lib/src/services/myAccountService";
 
 Vue.use(Router);
 
@@ -13,11 +13,11 @@ const router = new Router({
     {
       path: "/",
       name: "home",
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: false },
       components: { default: Home, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
+        footer: { backgroundColor: "white" }
       }
     },
     {

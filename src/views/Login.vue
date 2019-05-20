@@ -66,7 +66,7 @@
 
 <script>
 import { LoginCard } from "@/components";
-import myAccountService from "@/services/myAccountService";
+import myAccountService from "brightblock-lib/src/services/myAccountService";
 
 export default {
   components: {

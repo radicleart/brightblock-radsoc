@@ -1,9 +1,9 @@
 {
-  "name": "Open Art Market",
-  "start_url": "https://www.openartmart.org",
-  "description": "A decentralised art market and auction platform.",
+  "name": "Radicle Society",
+  "start_url": "https://radiclesociety.org",
+  "description": "Technology builder for the new decentralised internet.",
   "icons": [{
-    "src": "https://www.openartmart.org/static/images/about-us.jpg",
+    "src": "https://radiclesociety.org/static/images/android-chrome-192x192.png",
     "sizes": "192x192",
     "type": "image/png"
   }]
