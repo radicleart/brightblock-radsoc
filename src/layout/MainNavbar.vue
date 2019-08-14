@@ -1,133 +1,157 @@
 <template>
-  <md-toolbar
-    id="toolbar"
-    md-elevation="0"
-    class="md-white md-absolute"
-    :class="extraNavClasses"
+  <navbar
+    position="fixed"
+    type="primary"
+    :transparent="transparent"
     :color-on-scroll="colorOnScroll"
+    menu-classes="ml-auto"
   >
-    <div class="md-toolbar-row md-collapse-lateral">
-      <div class="md-toolbar-section-start">
-        <h3 class="md-title">
-          <router-link to="/" style="color: white;"
-            ><span class="md-display-2">Radicle Society</span></router-link
-          >
-        </h3>
-      </div>
-      <div class="md-toolbar-section-end">
-        <md-button
-          class="md-just-icon md-simple md-toolbar-toggle"
-          :class="{ toggled: toggledClass }"
-          @click="toggleNavbarMobile()"
+    <template slot-scope="{ toggle, isToggled }">
+      <router-link v-popover:popover1 class="navbar-brand" to="/" style="font-size:1.3rem; font-weight:bolder">
+        Radicle Society
+      </router-link>
+      <!--
+      <el-popover
+        ref="popover1"
+        popper-class="popover"
+        placement="bottom"
+        width="200"
+        trigger="hover"
+      >
+        <div class="popover-body">
+          Pulling the internet inside out!
+        </div>
+      </el-popover>
+      -->
+    </template>
+    <template slot="navbar-menu">
+    <!--
+      <li class="nav-item" v-if="!loggedIn">
+        <a
+          class="nav-link"
+          href="https://www.creative-tim.com/product/vue-now-ui-kit"
+          target="_blank"
         >
-          <span class="icon-bar"></span> <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </md-button>
-
-        <div class="md-collapse">
-          <div class="md-collapse-wrapper">
-            <mobile-menu nav-mobile-section-start="false">
-              <!-- Here you can add your items from the section-start of your toolbar -->
-            </mobile-menu>
-            <md-list>
-              <li class="md-list-item" v-if="loggedIn">
-                <a
-                  href="javascript:void(0)"
-                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
-                >
-                  <div class="md-list-item-content">
-                    <drop-down direction="down">
-                      <md-button
-                        slot="title"
-                        class="md-button md-button-link md-white md-simple dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        <p><span v-html="avatar"></span></p>
-                      </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li>
-                          <a class="dropdown-item">{{ username }}</a>
-                        </li>
-                        <li>
-                          <router-link
-                            class="dropdown-item"
-                            to="/admin/registrations"
-                            v-if="showAdmin"
-                            >Admin</router-link
-                          >
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            class="dropdown-item"
-                            @click.prevent="logout"
-                            ><i class="material-icons">fingerprint</i> Logout</a
-                          >
-                        </li>
-                      </ul>
-                    </drop-down>
-                  </div>
-                </a>
-              </li>
-              <md-list-item href="#/login" v-else>
-                <i class="material-icons">fingerprint</i>
-                <p>Login</p>
-              </md-list-item>
-            </md-list>
-          </div>
+          <i class="fas fa-sign-in-alt fa-2x mr-2"></i>
+          <p>Login</p>
+        </a>
+      </li>
+      <drop-down
+        tag="li"
+        title="Components"
+        icon="now-ui-icons users_single-02"
+        class="nav-item"
+      >
+        <nav-link to="/">
+          <i class="now-ui-icons business_chart-pie-36"></i> All components
+        </nav-link>
+        <a
+          href="https://demos.creative-tim.com/vue-now-ui-kit/documentation"
+          target="_blank"
+          class="dropdown-item"
+        >
+          <i class="now-ui-icons design_bullet-list-67"></i> Documentation
+        </a>
+      </drop-down>
+      <drop-down
+              tag="li"
+              title="Examples"
+              icon="now-ui-icons design_image"
+              class="nav-item"
+      >
+        <nav-link to="/landing">
+          <i class="now-ui-icons education_paper"></i> Landing
+        </nav-link>
+        <nav-link to="/login">
+          <i class="now-ui-icons users_circle-08"></i> Login
+        </nav-link>
+        <nav-link to="/profile">
+          <i class="now-ui-icons users_single-02"></i> Profile
+        </nav-link>
+      </drop-down>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span v-html="avatar"></span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </div>
-    </div>
-  </md-toolbar>
+      -->
+      <!--
+      <li class="nav-item">
+        <a
+          class="nav-link btn btn-neutral"
+          href="https://www.creative-tim.com/product/vue-now-ui-kit-pro"
+          target="_blank"
+        >
+          <i class="now-ui-icons arrows-1_share-66"></i>
+          <p>Upgrade to PRO</p>
+        </a>
+      </li>
+      -->
+
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          rel="tooltip"
+          title="Follow us on Twitter"
+          data-placement="bottom"
+          href="https://twitter.com/radiclesociety"
+          target="_blank"
+        >
+          <i class="fab fa-twitter"></i>
+          <p class="d-lg-none d-xl-none">Twitter</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          rel="tooltip"
+          title="Like us on Facebook"
+          data-placement="bottom"
+          href="https://www.facebook.com/radicleart"
+          target="_blank"
+        >
+          <i class="fab fa-facebook-square"></i>
+          <p class="d-lg-none d-xl-none">Facebook</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          rel="tooltip"
+          title="Follow us on Instagram"
+          data-placement="bottom"
+          href="https://www.instagram.com/radicleart/?hl=en"
+          target="_blank"
+        >
+          <i class="fab fa-instagram"></i>
+          <p class="d-lg-none d-xl-none">Instagram</p>
+        </a>
+      </li>
+    </template>
+  </navbar>
 </template>
 
 <script>
-let resizeTimeout;
-function resizeThrottler(actualResizeHandler) {
-  // ignore resize events as long as an actualResizeHandler execution is in the queue
-  if (!resizeTimeout) {
-    resizeTimeout = setTimeout(() => {
-      resizeTimeout = null;
-      actualResizeHandler();
-
-      // The actualResizeHandler will execute at a rate of 15fps
-    }, 66);
-  }
-}
-
-import MobileMenu from "@/layout/MobileMenu";
+import { DropDown, NavbarToggleButton, Navbar, NavLink } from '@/components';
+import { Popover } from 'element-ui';
 import myAccountService from "brightblock-lib/src/services/myAccountService";
-
 export default {
-  components: {
-    MobileMenu
-  },
+  name: 'main-navbar',
   props: {
-    type: {
-      type: String,
-      default: "white",
-      validator(value) {
-        return [
-          "white",
-          "default",
-          "primary",
-          "danger",
-          "success",
-          "warning",
-          "info"
-        ].includes(value);
-      }
-    },
-    colorOnScroll: {
-      type: Number,
-      default: 0
-    }
+    transparent: Boolean,
+    colorOnScroll: Number
   },
-  data() {
-    return {
-      extraNavClasses: "",
-      toggledClass: false
-    };
+  components: {
+    DropDown,
+    Navbar,
+    NavbarToggleButton,
+    NavLink,
+    [Popover.name]: Popover,
   },
   computed: {
     showDownload() {
@@ -149,7 +173,7 @@ export default {
           '"/>'
         );
       } else {
-        return '<span class="icon-user"></span>';
+        return '<i class="fas fa-user"></i>';
       }
     },
     loggedIn() {
@@ -157,62 +181,7 @@ export default {
       return myProfile.loggedIn;
     }
   },
-  methods: {
-    bodyClick() {
-      let bodyClick = document.getElementById("bodyClick");
-
-      if (bodyClick === null) {
-        let body = document.querySelector("body");
-        let elem = document.createElement("div");
-        elem.setAttribute("id", "bodyClick");
-        body.appendChild(elem);
-
-        let bodyClick = document.getElementById("bodyClick");
-        bodyClick.addEventListener("click", this.toggleNavbarMobile);
-      } else {
-        bodyClick.remove();
-      }
-    },
-    toggleNavbarMobile() {
-      this.NavbarStore.showNavbar = !this.NavbarStore.showNavbar;
-      this.toggledClass = !this.toggledClass;
-      this.bodyClick();
-    },
-    handleScroll() {
-      let scrollValue =
-        document.body.scrollTop || document.documentElement.scrollTop;
-      let navbarColor = document.getElementById("toolbar");
-      this.currentScrollValue = scrollValue;
-      if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {
-        this.extraNavClasses = `md-${this.type}`;
-        navbarColor.classList.remove("md-transparent");
-      } else {
-        if (this.extraNavClasses) {
-          this.extraNavClasses = "";
-          navbarColor.classList.add("md-transparent");
-        }
-      }
-    },
-    scrollListener() {
-      resizeThrottler(this.handleScroll);
-    },
-    scrollToElement() {
-      let element_id = document.getElementById("downloadSection");
-      if (element_id) {
-        element_id.scrollIntoView({ block: "end", behavior: "smooth" });
-      }
-    },
-    logout() {
-      localStorage.clear();
-      sessionStorage.clear();
-      myAccountService.logout();
-    }
-  },
-  mounted() {
-    document.addEventListener("scroll", this.scrollListener);
-  },
-  beforeDestroy() {
-    document.removeEventListener("scroll", this.scrollListener);
-  }
 };
 </script>
+
+<style scoped></style>

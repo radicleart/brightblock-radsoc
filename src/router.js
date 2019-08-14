@@ -1,31 +1,50 @@
-import Vue from "vue";
-import Router from "vue-router";
-import Home from "./views/Home.vue";
-import Login from "./views/Login.vue";
-import MainNavbar from "./layout/MainNavbar.vue";
-import MainFooter from "./layout/MainFooter.vue";
-import myAccountService from "brightblock-lib/src/services/myAccountService";
+import Vue from 'vue';
+import Router from 'vue-router';
+import Index from './pages/Index.vue';
+import Landing from './pages/Landing.vue';
+import Login from './pages/Login.vue';
+import Profile from './pages/Profile.vue';
+import MainNavbar from './layout/MainNavbar.vue';
+import MainFooter from './layout/MainFooter.vue';
 
 Vue.use(Router);
 
-const router = new Router({
+export default new Router({
+  linkExactActiveClass: 'active',
   routes: [
     {
-      path: "/",
-      name: "home",
-      meta: { requiresAuth: false },
-      components: { default: Home, header: MainNavbar, footer: MainFooter },
+      path: '/',
+      name: 'index',
+      components: { default: Index, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "white" }
+        footer: { backgroundColor: 'black' }
       }
     },
     {
-      path: "/login",
-      name: "login",
-      components: { default: Login, header: MainNavbar, footer: MainFooter },
+      path: '/landing',
+      name: 'landing',
+      components: { default: Landing, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/login',
+      name: 'login',
+      components: { default: Login, header: MainNavbar },
       props: {
         header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      components: { default: Profile, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
       }
     }
   ],
@@ -37,18 +56,3 @@ const router = new Router({
     }
   }
 });
-router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (!myAccountService.isLoggedIn()) {
-      next({
-        path: "/login",
-        query: { redirect: to.fullPath }
-      });
-    } else {
-      next();
-    }
-  } else {
-    next(); // make sure to always call next()!
-  }
-});
-export default router;

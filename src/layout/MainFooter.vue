@@ -5,9 +5,27 @@
     :data-background-color="backgroundColor"
   >
     <div class="container">
-      <nav></nav>
+      <nav>
+        <ul>
+          <li>
+            <a href="https://dbid.io">
+              Bidding
+            </a>
+          </li>
+          <li>
+            <a href="https:///radicle.art">
+              Provenance
+            </a>
+          </li>
+          <li>
+            <a href="https://medium.com/@radiclesociety/problems-of-decentralised-applications-f6176381c75a">
+              Blog
+            </a>
+          </li>
+        </ul>
+      </nav>
       <div class="copyright">
-        &copy; {{ year }}, with <md-icon>favorite</md-icon>&nbsp; <a href="https://radiclesociety.org">radiclesociety.org</a>.
+        &copy; {{ year }}, with <i class="far fa-heart"></i>&nbsp; <a href="https://radiclesociety.org">radiclesociety.org</a>.
       </div>
     </div>
   </footer>
@@ -25,3 +43,4 @@ export default {
   }
 };
 </script>
+<style></style>

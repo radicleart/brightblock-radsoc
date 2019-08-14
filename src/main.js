@@ -1,30 +1,16 @@
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-
-import MaterialKit from "./plugins/material-kit";
+import Vue from 'vue';
+import App from './App.vue';
+// You can change this import to `import router from './starterRouter'` to quickly start development from a blank layout.
+import router from './router';
+import NowUiKit from './plugins/now-ui-kit';
 import store from "@/storage/store";
 
 Vue.config.productionTip = false;
 
-Vue.use(MaterialKit);
-
-const NavbarStore = {
-  showNavbar: false
-};
-
-store.dispatch("myAccountStore/fetchMyAccount");
-
-Vue.mixin({
-  data() {
-    return {
-      NavbarStore
-    };
-  }
-});
+Vue.use(NowUiKit);
 
 new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount("#app");
+}).$mount('#app');

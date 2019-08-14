@@ -8,10 +8,7 @@ module.exports = {
     }
   },
   css: {
-    loaderOptions: {
-      css: {
-        sourceMap: process.env.NODE_ENV !== "production" ? true : false
-      }
-    }
+    // Enable CSS source maps.
+    sourceMap: process.env.NODE_ENV !== 'production'
   }
 };

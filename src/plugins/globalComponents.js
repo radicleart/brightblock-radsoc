@@ -1,16 +1,12 @@
-import { DropDown } from "../components";
-import { Parallax } from "../components";
-import { VPopover } from "v-tooltip";
+import { Parallax } from '../components';
 /**
- * You can register global components here and use them as a plugin in your main Vue instance
+ * You can register global components here
  */
 
-const GlobalComponents = {
+const globalComponents = {
   install(Vue) {
-    Vue.component("drop-down", DropDown);
     Vue.component(Parallax.name, Parallax);
-    Vue.component("v-popover", VPopover);
   }
 };
 
-export default GlobalComponents;
+export default globalComponents;
