@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.0",
-    "brightblock-lib": "^1.0.40",
+    "brightblock-lib": "^1.0.41",
     "element-ui": "^2.5.4",
     "mdbvue": "file:mdbvue-5.5.0.tgz",
     "nouislider": "^11.1.0",
