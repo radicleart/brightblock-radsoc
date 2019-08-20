@@ -7,21 +7,11 @@
     <div class="container">
       <nav>
         <ul>
-          <li>
-            <a href="https://dbid.io">
-              Bidding
-            </a>
-          </li>
-          <li>
-            <a href="https:///radicle.art">
-              Provenance
-            </a>
-          </li>
-          <li>
-            <a href="https://medium.com/@radiclesociety/problems-of-decentralised-applications-f6176381c75a">
-              Blog
-            </a>
-          </li>
+          <!--
+          <li><a href="https://dbid.io">Bidding</a></li>
+          <li><a href="https:///radicle.art">Provenance</a></li>
+          -->
+          <li><a href="https://medium.com/@radiclesociety/problems-of-decentralised-applications-f6176381c75a">Blog</a></li>
         </ul>
       </nav>
       <div class="copyright">

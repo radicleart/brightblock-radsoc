@@ -1,21 +1,20 @@
 <template>
   <div
     class="section section-download"
-    id="#download-section"
-    data-background-color="black"
+    id="#download-section"  data-background-color="black"
   >
-    <div class="container">
+    <div class="container" >
       <div class="row justify-content-md-center">
         <div class="text-center col-md-12 col-lg-8">
-          <h3 class="title">Check us out on Product Hunt?</h3>
+          <h3 class="title">Product Hunt</h3>
           <h5 class="description">
-            Join the Product Hunt community for the latest news about our reference implementations!
+            Join us on Product Hunt for news about latest releases and developments!
           </h5>
         </div>
         <div class="text-center col-md-12 col-lg-8">
           <a
             href="https://www.producthunt.com/posts/radicle"
-            class="btn btn-primary btn-lg btn-round"
+            class="btn btn-primary btn-lg btn-round mr-5"
             role="button"
           >
             Radicle Art
@@ -30,32 +29,6 @@
           </a>
         </div>
       </div>
-      <br />
-      <br />
-      <br />
-      <div class="row text-center mt-5">
-        <div class="col-md-8 ml-auto mr-auto">
-          <h2>About Blockstack</h2>
-          <h5 class="description">
-            Own your own online identity
-            <a
-              href="https://blockstack.org/try-blockstack"
-              target="_blank"
-              >Create ID</a>.
-              Blockstack apps protect your digital rights and are powered by the Stacks blockchain.
-          </h5>
-        </div>
-        <div class="col-md-12">
-          <a
-            href="/"
-            class="btn btn-neutral btn-round btn-lg"
-          >
-            <i class="now-ui-icons arrows-1_share-66"></i> Join the Conversation
-          </a>
-        </div>
-      </div>
-      <br />
-      <br />
       <div class="row justify-content-md-center sharing-area text-center">
         <div class="text-center col-md-12 col-lg-8">
           <h3>Thank you for supporting us!</h3>
